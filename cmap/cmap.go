@@ -25,8 +25,8 @@ func New() *HashTable {
 	return &ht
 }
 
-// FromMap gets a normal map, constructs, and returns a thread-safe concurrent hashtable out of its records.
-func FromMap(data map[string]string) *HashTable {
+// From gets a normal map, constructs, and returns a thread-safe concurrent hashtable out of its records.
+func From(data map[string]string) *HashTable {
 	ht := New()
 	for k, v := range data {
 		shard := ht.getShard(k)
